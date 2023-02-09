@@ -13,7 +13,32 @@ public class Main {
     }
 
     @GetMapping("/welcome")
-    public String welcome() {
-        return "This is fine";
+    public WelcomeResponse welcome() {
+//        return new WelcomeResponse("This is fine");
+        return new WelcomeResponse("This is not fine", "bye bye");
     }
+
+    record WelcomeResponse(String welcome, String goodbye) {}
+
+//    static class WelcomeResponse {
+//        final String welcome;
+//        final String goodbye;
+//
+//        public WelcomeResponse(String welcome, String goodbye) {
+//            this.welcome = welcome;
+//            this.goodbye = goodbye;
+//        }
+//
+//        public String incrementWelcome() {
+//            return getWelcome() + ", or it is!";
+//        }
+//
+//        public String getWelcome() {
+//            return welcome;
+//        }
+//
+//        public String getGoodbye() {
+//            return goodbye;
+//        }
+//    }
 }
